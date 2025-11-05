@@ -1,0 +1,66 @@
+.store-detail-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.store-detail-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.store-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.store-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.store-info {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.store-info p {
+  margin: 0.5rem 0;
+}
+
+.store-info strong {
+  font-weight: bold;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10%;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.edit-button, .delete-button {
+  padding: 0.5rem 1rem;
+  background-color: #0f4c81;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.go-back-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12;
+  margin-bottom: 15px;
+}

@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { RecoilRoot } from 'recoil';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './pages/login/Login';
+import Store from './pages/store/Store';
+import StoreDetail from './pages/store/StoreDetail';
+import StoreAdd from './pages/store/StoreAdd';
+import StoreDetailEdit from './pages/store/StoreDetailEdit';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <BrowserRouter>
+        <RecoilRoot>
+          <Routes>
+            <Route path='/' element={<Login />}></Route>
+            <Route path='/store' element={<Store />}></Route>
+            <Route path='/store/add' element={<StoreAdd />}></Route>
+            <Route path='/store/detail/:storeId' element={<StoreDetail />}></Route>
+            <Route path='/store/edit/:storeId' element={<StoreDetailEdit />}></Route>
+          </Routes>
+        </RecoilRoot>
+      </BrowserRouter>
     </div>
   );
 }
