@@ -1,0 +1,64 @@
+/* Panel container (aligns with Login .container and Store .store-list-container) */
+.main-container {
+    width: 100%;
+    max-width: 800px;            /* Store.css uses 600px; Login.css uses 400px */
+    padding: 2rem;               /* Login.css/Store.css: 2rem */
+    background-color: #ffffff;   /* white card */
+    border-radius: 10px;         /* same radius */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* subtle elevation */
+    text-align: center;          /* consistent with existing pages */
+    margin: 0 auto;              /* center horizontally just in case */
+  }
+  
+  /* Heading — mirrors Login.css h2 sizing/color */
+  .main-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;           /* Login.css h2 */
+    color: #333;                 /* Login.css h2 */
+    font-weight: 600;
+  }
+  
+  /* Vertical actions stack — future feature buttons in a column */
+  .card-grid {
+    display: flex;
+    flex-direction: column;      /* vertical alignment */
+    gap: 0.75rem;                /* compact spacing like form fields */
+    width: 100%;
+    max-width: 420px;            /* similar visual width to Login form */
+    margin: 0 auto;
+  }
+  
+  /* Button style — reuse palette from Login.css / Store.css (#0f4c81) */
+  .card-grid button,
+  .main-container .button {
+    width: 100%;
+    padding: 0.75rem;            /* Login.css .button */
+    font-size: 1rem;             /* Login.css .button */
+    background-color: #0f4c81;   /* brand primary (Login/Store) */
+    color: #fff;                 /* white text */
+    border: none;
+    border-radius: 5px;          /* Login.css .button */
+    cursor: pointer;
+    transition: background-color 0.3s ease;  /* consistent transition */
+  }
+  
+  .card-grid button:hover,
+  .main-container .button:hover {
+    background-color: #0d436f;   /* slightly darker on hover */
+  }
+  
+  /* Optional: section label above grouped buttons */
+  .section-title {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;                 /* mirrors Login.css .label tone */
+    text-align: left;
+  }
+  
+  /* Mobile tweaks similar to other pages */
+  @media (max-width: 480px) {
+    .main-container { padding: 1.5rem; }
+    .main-container h2 { font-size: 1.35rem; }
+  }
+  

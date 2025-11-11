@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import config from "../../config";
 
-export default function Login() {
+export default function Login({ onSuccess }) {
     const [userId, setUserId] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -26,9 +26,18 @@ export default function Login() {
           return res.json();
         })
         .then((res) => {
+          // (핵심) 토큰 저장 후 성공 처리
           localStorage.setItem("accessToken", res.accessToken);
-          alert("로그인 성공")
-          navigate("/store")
+          alert("로그인 성공");
+          // ① Main(/) 안에서 렌더된 경우: 부모(Main)로 성공 신호를 보내 화면 전환
+          if (typeof onSuccess === "function") {
+            onSuccess();
+            return;
+          }
+          // ② /login 경로에서 열린 경우: 메인(/)으로 이동
+          setTimeout(() => {
+            navigate("/", { replace: true });
+          }, 0);
         })
         .catch((error) => {
           alert(error.message);

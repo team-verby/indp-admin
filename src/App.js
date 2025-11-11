@@ -1,6 +1,7 @@
 import './App.css';
 import { RecoilRoot } from 'recoil';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Main from './pages/main/Main';
 import Login from './pages/login/Login';
 import Store from './pages/store/Store';
 import StoreDetail from './pages/store/StoreDetail';
@@ -13,7 +14,8 @@ function App() {
       <BrowserRouter>
         <RecoilRoot>
           <Routes>
-            <Route path='/' element={<Login />}></Route>
+            <Route path='/' element={<Main />}></Route>
+            <Route path='/login' element={<Login />}></Route>
             <Route path='/store' element={<Store />}></Route>
             <Route path='/store/add' element={<StoreAdd />}></Route>
             <Route path='/store/detail/:storeId' element={<StoreDetail />}></Route>
